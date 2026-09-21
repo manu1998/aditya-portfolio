@@ -1,0 +1,27 @@
+{
+  "status": "editorial_drafts_active_subscriber_delivery_pending",
+  "name": "AI News Scout",
+  "sender_email": "adityashrivastav2011@gmail.com",
+  "reply_to": "adityashrivastav2011@gmail.com",
+  "schedule": {
+    "timezone": "Asia/Kolkata",
+    "local_time": "11:00",
+    "utc_cron": "30 5 * * *",
+    "ical_rrule": "FREQ=DAILY;BYHOUR=11;BYMINUTE=0;BYSECOND=0"
+  },
+  "signup_mode": "manual_mailto_request",
+  "automatic_signup_enabled": false,
+  "automatic_delivery_enabled": false,
+  "supabase_connected": false,
+  "recipient_rule": "confirmed active subscribers only; recheck before each send",
+  "gmail_identity_checked": "adityashrivastav2011@gmail.com",
+  "production_mail_auth_configured": false,
+  "editorial_automation": {
+    "id": "6ab055cb80b481919cb9f487c3348bc8",
+    "title": "AI News Scout Draft",
+    "enabled": true,
+    "mode": "gmail_draft_only_no_recipients",
+    "first_run": "gmail_draft_confirmed",
+    "first_issue_date_ist": "2026-09-21"
+  }
+}

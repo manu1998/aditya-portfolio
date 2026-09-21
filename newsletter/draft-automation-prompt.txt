@@ -1,0 +1,280 @@
+Prepare the next AI News Scout briefing as a Gmail DRAFT for my portfolio newsletter, using the editorial brief below.
+
+CURRENT MODE: DRAFT ONLY. The subscriber database is intentionally deferred. Do not connect to Supabase, collect or infer subscribers, activate anyone, send any email, or call a send tool. Leave To, CC and BCC empty. The original brief's personal recipient aditya@saros.in is not a recipient in this draft-only phase.
+
+First verify that the connected Gmail profile is adityashrivastav2011@gmail.com. If it differs or authentication fails, stop before any Gmail write and report the connection issue. Use this same authenticated account as from_address. Save one polished multipart/alternative draft containing UTF-8 HTML with inline CSS and a plain-text version. Use absolute source links, no scripts or remote fonts. Subject: [AI News Scout] {DD Mon YYYY} — models, India, governance & opportunities. The issue date is in Asia/Kolkata.
+
+Use current public web research and prefer primary sources. Do not produce fake or placeholder news. Check for an AI News Scout draft already dated today before creating another. Update that draft if the current run repeats the same issue. Keep personal data and private projects out of the issue. Write for subscribers who build products and operate businesses, rather than addressing Aditya personally.
+
+2. EDITORIAL MISSION
+--------------------
+
+Every issue should help subscribers answer:
+
+- What changed in AI that is genuinely important?
+- Which AI products or model releases are worth understanding?
+- Which Indian AI startups deserve attention?
+- What AI governance or policy change could affect builders or businesses?
+- What buildable AI business opportunity is visible in the news?
+
+Write for a smart, busy operator. Use plain English, short paragraphs, specific facts, and a clear “why it matters” for every important item.
+
+Use India-first context where relevant. Prioritise opportunities in:
+
+- India, Delhi NCR, Nagpur, and the wider Indian market
+- Dubai and Gulf real estate / property operations
+- SMB websites, CRMs, WhatsApp agents, support agents, voice agents, and workflow automation
+- AI products that an operator can validate quickly without a large engineering team
+
+Do not expose private project details, credentials, personal data, or internal customer information in the email.
+
+
+3. TIME WINDOW AND STATE
+------------------------
+
+At the start of each run:
+
+1. Read the last successful AI News Scout draft or previous run output, if available. Reuse today's existing AI News Scout draft instead of creating a duplicate. No database is required in this draft-only phase.
+2. Search primarily from the last successful run until now.
+3. If no state exists, search the previous 36 hours.
+4. If a previous run failed or was skipped, widen the window to 48 hours and label older items by their original publication date.
+5. Never pretend an old story is new. Show the original date and publisher.
+
+Store only minimal run metadata if persistence is available:
+
+- last_successful_run_ist
+- issue_date_ist
+- URLs already used recently
+- candidate count, selected count, and send status
+- error summary without secrets
+
+If no persistent state store is available, use the previous issue or the last 36 hours as the fallback and deduplicate by canonical URL and title.
+
+
+4. SOURCE DISCOVERY AND SCRAPING
+--------------------------------
+
+Use public web sources only. Prefer RSS feeds, official news pages, public sitemaps, and public APIs when available. Use browser/page extraction for public JavaScript-rendered pages when a normal fetch is insufficient.
+
+Do not bypass authentication, paywalls, robots restrictions, CAPTCHAs, rate limits, or access controls. Do not scrape private dashboards, private social posts, or logged-in pages. If a page cannot be accessed, mark it as unavailable and move on.
+
+Use parallel discovery where possible, but keep requests polite and bounded. Do not hammer one domain. Cache URLs already checked during the same run.
+
+Suggested source groups:
+
+A. Official AI product and model sources
+
+- OpenAI News / product announcements
+- Anthropic News
+- Google AI and Google DeepMind blogs
+- Microsoft AI Blog
+- Meta AI
+- Mistral AI
+- Hugging Face blog
+- Perplexity announcements
+- xAI announcements when relevant
+- Official product documentation or release notes
+
+B. Indian AI startup and ecosystem sources
+
+Track meaningful developments from companies such as Sarvam AI, Krutrim, Neysa, E2E Networks, Yellow.ai, Uniphore, CoRover, Gnani.ai, Fractal, Qure.ai, Mad Street Den, Observe.AI, and other credible Indian AI companies discovered during research.
+
+Also monitor reputable Indian technology and business reporting, including Inc42, YourStory, Entrackr, Economic Times Tech, Moneycontrol, VCCircle, and other established outlets. Treat startup claims as claims until verified.
+
+C. Funding sources
+
+- Company press releases or official announcements
+- Reputable venture / technology publications
+- Investor announcements
+- Established Indian business reporting
+
+Keep these categories separate:
+
+1. Funding round announced or closed
+2. Funding reportedly being discussed / in talks
+3. Venture fund raised or fund closure
+
+Never present a VC fund closure as startup funding. Never turn “in talks”, “may raise”, or anonymous-source reporting into a confirmed round.
+
+D. AI governance and policy sources
+
+- Government and regulator announcements
+- India MeitY and other relevant Indian policy sources
+- EU AI Office / European Commission
+- UK AI Safety Institute or relevant UK government sources
+- NIST, FTC, DOJ, or other official US sources when relevant
+- Official court, regulator, standards, or public consultation documents
+
+E. Practical builder signals
+
+- Major product launches
+- New APIs, agents, multimodal capabilities, pricing, limits, or reliability changes
+- Real customer adoption or deployment evidence
+- Open-source releases with credible usage or strategic relevance
+- Security, privacy, safety, or policy developments that change product decisions
+
+Do not fill the issue with generic “AI is growing” commentary, recycled listicles, SEO pages, or unverified social posts.
+
+
+5. EXTRACTION PIPELINE
+----------------------
+
+For every candidate item, extract:
+
+- headline
+- canonical URL
+- publisher / organisation
+- original publication timestamp
+- country or market
+- category
+- the factual claim
+- what changed
+- why it matters
+- whether it is official, reported, or unverified
+
+Normalise dates to Asia/Kolkata for the email, while preserving the original publication date in the source line.
+
+When scraping a page:
+
+1. Fetch the public page or feed.
+2. Identify the main headline, date, author or publisher, and article body.
+3. Ignore navigation, cookie banners, related-story widgets, ads, comments, and duplicated page chrome.
+4. Extract only enough text to understand the claim; do not reproduce entire articles.
+5. Keep the canonical source URL.
+6. If a page is JS-rendered, use a browser/page text extraction route only after a normal public fetch is insufficient.
+7. Record failures separately; never silently replace a missing source with an invented summary.
+
+
+6. VERIFICATION AND QUALITY CONTROL
+-----------------------------------
+
+Use a source hierarchy:
+
+- Tier 1: official company, regulator, government, investor, or product documentation
+- Tier 2: reputable reporting with named sources and clear publication dates
+- Tier 3: analyst, newsletter, social, or community signal used only as a lead
+
+Verification rules:
+
+- A product launch can be reported from the official source.
+- A funding round should be confirmed by the company, investor, or at least one highly credible report; label reported information honestly.
+- A funding “talk” must remain labelled as reported talks.
+- A governance claim must link to the official policy, regulator, court, or government source where possible.
+- If sources disagree, say so briefly and link the disagreement.
+- If a claim cannot be verified, exclude it from the main digest or label it “unverified lead — not included as fact”.
+- Never invent numbers, valuations, dates, customer names, product capabilities, or quotes.
+- Never call a source “official” unless it is published by the relevant organisation.
+
+Deduplicate:
+
+- Remove repeated stories covering the same announcement.
+- Prefer the primary source plus one strong secondary source when the context matters.
+- Do not give five links to the same story.
+
+Score candidates from 0 to 5 on:
+
+- relevance to builders and product operators
+- reliability of evidence
+- novelty since the last issue
+- actionability for a builder or operator
+- India / Gulf relevance when applicable
+
+Select the highest-value items, not the highest number of items.
+
+
+7. REQUIRED EMAIL STRUCTURE
+---------------------------
+
+Prepare a polished, mobile-friendly HTML email draft with inline CSS and absolute source links. Do not rely on external CSS, JavaScript, fonts, or images that may fail in Gmail.
+
+Subject format:
+
+[AI News Scout] {DD Mon YYYY} — models, India, governance & opportunities
+
+Email body order:
+
+1. Header
+
+Title: AI News Scout
+Date in IST
+One-line descriptor: “A filtered daily brief for building with AI.”
+
+2. The short version
+
+Give 3 to 5 bullets with the most important developments of the day. Each bullet should contain the event and one sentence on why it matters.
+
+3. AI products, models and launches
+
+Include the 2 to 5 strongest items. For each:
+
+- What happened
+- Why it matters
+- What the reader should watch or try next
+- Source link and original date
+
+4. Indian AI startups to watch
+
+Include only meaningful developments: product launch, customer traction, strategic partnership, hiring signal, model release, expansion, or credible company milestone. Do not list a company just because it exists.
+
+5. Verified India AI funding alerts
+
+Use separate labels:
+
+- Confirmed funding
+- Reported talks / possible funding
+- VC fund closure (separate context only)
+
+Include stage, amount, investor, company, and source only when verified or explicitly labelled.
+
+6. AI governance and policy
+
+Explain the practical effect of the most relevant policy, regulation, safety, copyright, privacy, or standards development. Include who is affected and what a builder should do differently.
+
+7. AI business opportunities readers could validate
+
+Suggest 2 or 3 specific opportunities based on the news. Each opportunity must include:
+
+- customer
+- painful workflow
+- narrow product wedge
+- why now
+- first validation step within 7 days
+- likely India or Gulf relevance
+
+Prioritise ideas around property operations, SMB websites, WhatsApp, customer support, sales, voice, lead qualification, and workflow automation. Do not suggest vague ideas like “build an AI platform”.
+
+8. One thing to do today
+
+End with one concrete action the reader can complete in 15 to 30 minutes.
+
+9. Sources
+
+List the selected sources as linked titles with publisher and publication date. Keep the source list concise.
+
+The email should be useful even when the news cycle is quiet. If there are no major developments, say “Quiet day” and provide the few verified signals plus one practical build angle. Never manufacture news to make the email look full.
+
+
+8. WRITING STYLE
+-----------------
+
+- Clear, direct, and lightly opinionated
+- Compact enough to read in 5 minutes
+- No hype words unless the source uses a precise claim
+- Explain jargon once, then use plain language
+- Use Indian English where natural; keep product and company names accurate
+- Separate fact, interpretation, and recommendation
+- Prefer “This matters because…” over empty summaries
+- Use exact dates and currencies
+- Convert large numbers carefully and preserve the original currency
+
+Do not write like a press release. Do not write like a generic AI news aggregator. Write like a sharp operator is briefing another sharp operator.
+
+
+
+
+DRAFT-ONLY COMPLETION RULES
+Before saving, check every key claim, source date, clickable URL, funding label, and the IST issue date. Distinguish facts, analysis and recommendations. Keep it roughly a five-minute read. Empty sections should say no verified update rather than inventing content.
+Since delivery is not active, use this honest draft footer: "Prepared newsletter draft. Subscriber delivery is not active." Do not invent an unsubscribe URL or claim automatic subscriptions.
+If Gmail draft creation is unavailable, preserve complete HTML and plain text in the run output and report failure; do not send as a fallback. If a write times out, reconcile existing drafts before retrying. Log only minimal run details without secrets.
+After confirmed draft creation/update, report the date, item count, and that the message remains an unsent draft with no recipients. Never say sent or delivered.
+This task requires only public research and the connected Gmail account. A future explicitly authorised update may connect a confirmed subscriber database and delivery; do not make that change yourself.

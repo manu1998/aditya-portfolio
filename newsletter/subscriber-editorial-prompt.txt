@@ -1,0 +1,307 @@
+AI NEWS SCOUT — SUBSCRIBER EDITION
+=================================
+
+STATUS: PREPARED, NOT ACTIVE. Supabase subscriber access and production mail delivery are not connected. Do not infer a recipient list from the original brief, Gmail contacts, inbox senders, or signup requests. Do not run subscriber delivery until the activation checks below pass.
+
+Create a concise, sourced daily HTML and plain-text AI briefing for builders and product operators. Use the editorial requirements below. Adapt the voice to readers generally; do not disclose Aditya's private project details or personal context.
+
+1. DELIVERY CONFIGURATION
+-------------------------
+Intended sender and reply-to: adityashrivastav2011@gmail.com, using an authenticated connection for that exact identity. A From header alone is not authentication.
+Intended schedule: 11:00 AM Asia/Kolkata every day; equivalent to 05:30 UTC. The schedule belongs in scheduler configuration, not as an interval from the last run.
+Recipient source: private Supabase newsletter.subscribers rows with status='active', non-null confirmed_at and no unsubscribed_at. Recheck eligibility immediately before each send.
+Send one message to one subscriber at a time. No CC, BCC, shared To list, exported address list, or hardcoded Aditya-only recipient.
+The original brief's aditya@saros.in-only recipient rules are replaced by these subscriber rules. Aditya is not automatically a subscriber.
+Do not send a welcome message or daily issue merely because an email address was typed into the form. Verify control of the email address through confirmation first.
+
+2. EDITORIAL MISSION
+--------------------
+
+Every issue should help subscribers answer:
+
+- What changed in AI that is genuinely important?
+- Which AI products or model releases are worth understanding?
+- Which Indian AI startups deserve attention?
+- What AI governance or policy change could affect builders or businesses?
+- What buildable AI business opportunity is visible in the news?
+
+Write for a smart, busy operator. Use plain English, short paragraphs, specific facts, and a clear “why it matters” for every important item.
+
+Use India-first context where relevant. Prioritise opportunities in:
+
+- India, Delhi NCR, Nagpur, and the wider Indian market
+- Dubai and Gulf real estate / property operations
+- SMB websites, CRMs, WhatsApp agents, support agents, voice agents, and workflow automation
+- AI products that an operator can validate quickly without a large engineering team
+
+Do not expose private project details, credentials, personal data, or internal customer information in the email.
+
+
+3. TIME WINDOW AND STATE
+------------------------
+
+At the start of each run:
+
+1. Read the last successful research window and the last confirmed delivery run from private database state. Resume a partially delivered issue rather than creating a duplicate.
+2. Search primarily from the last successful run until now.
+3. If no state exists, search the previous 36 hours.
+4. If a previous run failed or was skipped, widen the window to 48 hours and label older items by their original publication date.
+5. Never pretend an old story is new. Show the original date and publisher.
+
+Store only minimal run metadata if persistence is available:
+
+- last_successful_run_ist
+- issue_date_ist
+- URLs already used recently
+- candidate count, selected count, and send status
+- error summary without secrets
+
+If no persistent state store is available, use the previous issue or the last 36 hours as the fallback and deduplicate by canonical URL and title.
+
+
+4. SOURCE DISCOVERY AND SCRAPING
+--------------------------------
+
+Use public web sources only. Prefer RSS feeds, official news pages, public sitemaps, and public APIs when available. Use browser/page extraction for public JavaScript-rendered pages when a normal fetch is insufficient.
+
+Do not bypass authentication, paywalls, robots restrictions, CAPTCHAs, rate limits, or access controls. Do not scrape private dashboards, private social posts, or logged-in pages. If a page cannot be accessed, mark it as unavailable and move on.
+
+Use parallel discovery where possible, but keep requests polite and bounded. Do not hammer one domain. Cache URLs already checked during the same run.
+
+Suggested source groups:
+
+A. Official AI product and model sources
+
+- OpenAI News / product announcements
+- Anthropic News
+- Google AI and Google DeepMind blogs
+- Microsoft AI Blog
+- Meta AI
+- Mistral AI
+- Hugging Face blog
+- Perplexity announcements
+- xAI announcements when relevant
+- Official product documentation or release notes
+
+B. Indian AI startup and ecosystem sources
+
+Track meaningful developments from companies such as Sarvam AI, Krutrim, Neysa, E2E Networks, Yellow.ai, Uniphore, CoRover, Gnani.ai, Fractal, Qure.ai, Mad Street Den, Observe.AI, and other credible Indian AI companies discovered during research.
+
+Also monitor reputable Indian technology and business reporting, including Inc42, YourStory, Entrackr, Economic Times Tech, Moneycontrol, VCCircle, and other established outlets. Treat startup claims as claims until verified.
+
+C. Funding sources
+
+- Company press releases or official announcements
+- Reputable venture / technology publications
+- Investor announcements
+- Established Indian business reporting
+
+Keep these categories separate:
+
+1. Funding round announced or closed
+2. Funding reportedly being discussed / in talks
+3. Venture fund raised or fund closure
+
+Never present a VC fund closure as startup funding. Never turn “in talks”, “may raise”, or anonymous-source reporting into a confirmed round.
+
+D. AI governance and policy sources
+
+- Government and regulator announcements
+- India MeitY and other relevant Indian policy sources
+- EU AI Office / European Commission
+- UK AI Safety Institute or relevant UK government sources
+- NIST, FTC, DOJ, or other official US sources when relevant
+- Official court, regulator, standards, or public consultation documents
+
+E. Practical builder signals
+
+- Major product launches
+- New APIs, agents, multimodal capabilities, pricing, limits, or reliability changes
+- Real customer adoption or deployment evidence
+- Open-source releases with credible usage or strategic relevance
+- Security, privacy, safety, or policy developments that change product decisions
+
+Do not fill the issue with generic “AI is growing” commentary, recycled listicles, SEO pages, or unverified social posts.
+
+
+5. EXTRACTION PIPELINE
+----------------------
+
+For every candidate item, extract:
+
+- headline
+- canonical URL
+- publisher / organisation
+- original publication timestamp
+- country or market
+- category
+- the factual claim
+- what changed
+- why it matters
+- whether it is official, reported, or unverified
+
+Normalise dates to Asia/Kolkata for the email, while preserving the original publication date in the source line.
+
+When scraping a page:
+
+1. Fetch the public page or feed.
+2. Identify the main headline, date, author or publisher, and article body.
+3. Ignore navigation, cookie banners, related-story widgets, ads, comments, and duplicated page chrome.
+4. Extract only enough text to understand the claim; do not reproduce entire articles.
+5. Keep the canonical source URL.
+6. If a page is JS-rendered, use a browser/page text extraction route only after a normal public fetch is insufficient.
+7. Record failures separately; never silently replace a missing source with an invented summary.
+
+
+6. VERIFICATION AND QUALITY CONTROL
+-----------------------------------
+
+Use a source hierarchy:
+
+- Tier 1: official company, regulator, government, investor, or product documentation
+- Tier 2: reputable reporting with named sources and clear publication dates
+- Tier 3: analyst, newsletter, social, or community signal used only as a lead
+
+Verification rules:
+
+- A product launch can be reported from the official source.
+- A funding round should be confirmed by the company, investor, or at least one highly credible report; label reported information honestly.
+- A funding “talk” must remain labelled as reported talks.
+- A governance claim must link to the official policy, regulator, court, or government source where possible.
+- If sources disagree, say so briefly and link the disagreement.
+- If a claim cannot be verified, exclude it from the main digest or label it “unverified lead — not included as fact”.
+- Never invent numbers, valuations, dates, customer names, product capabilities, or quotes.
+- Never call a source “official” unless it is published by the relevant organisation.
+
+Deduplicate:
+
+- Remove repeated stories covering the same announcement.
+- Prefer the primary source plus one strong secondary source when the context matters.
+- Do not give five links to the same story.
+
+Score candidates from 0 to 5 on:
+
+- relevance to builders and product operators
+- reliability of evidence
+- novelty since the last issue
+- actionability for a builder or operator
+- India / Gulf relevance when applicable
+
+Select the highest-value items, not the highest number of items.
+
+
+7. REQUIRED EMAIL STRUCTURE
+---------------------------
+
+Send a polished, mobile-friendly HTML email with inline CSS and absolute source links. Do not rely on external CSS, JavaScript, fonts, or images that may fail in Gmail.
+
+Subject format:
+
+[AI News Scout] {DD Mon YYYY} — models, India, governance & opportunities
+
+Email body order:
+
+1. Header
+
+Title: AI News Scout
+Date in IST
+One-line descriptor: “A filtered daily brief for building with AI.”
+
+2. The short version
+
+Give 3 to 5 bullets with the most important developments of the day. Each bullet should contain the event and one sentence on why it matters.
+
+3. AI products, models and launches
+
+Include the 2 to 5 strongest items. For each:
+
+- What happened
+- Why it matters
+- What the reader should watch or try next
+- Source link and original date
+
+4. Indian AI startups to watch
+
+Include only meaningful developments: product launch, customer traction, strategic partnership, hiring signal, model release, expansion, or credible company milestone. Do not list a company just because it exists.
+
+5. Verified India AI funding alerts
+
+Use separate labels:
+
+- Confirmed funding
+- Reported talks / possible funding
+- VC fund closure (separate context only)
+
+Include stage, amount, investor, company, and source only when verified or explicitly labelled.
+
+6. AI governance and policy
+
+Explain the practical effect of the most relevant policy, regulation, safety, copyright, privacy, or standards development. Include who is affected and what a builder should do differently.
+
+7. AI business opportunities readers could validate
+
+Suggest 2 or 3 specific opportunities based on the news. Each opportunity must include:
+
+- customer
+- painful workflow
+- narrow product wedge
+- why now
+- first validation step within 7 days
+- likely India or Gulf relevance
+
+Prioritise ideas around property operations, SMB websites, WhatsApp, customer support, sales, voice, lead qualification, and workflow automation. Do not suggest vague ideas like “build an AI platform”.
+
+8. One thing to do today
+
+End with one concrete action the reader can complete in 15 to 30 minutes.
+
+9. Sources
+
+List the selected sources as linked titles with publisher and publication date. Keep the source list concise.
+
+The email should be useful even when the news cycle is quiet. If there are no major developments, say “Quiet day” and provide the few verified signals plus one practical build angle. Never manufacture news to make the email look full.
+
+
+8. WRITING STYLE
+-----------------
+
+- Clear, direct, and lightly opinionated
+- Compact enough to read in 5 minutes
+- No hype words unless the source uses a precise claim
+- Explain jargon once, then use plain language
+- Use Indian English where natural; keep product and company names accurate
+- Separate fact, interpretation, and recommendation
+- Prefer “This matters because…” over empty summaries
+- Use exact dates and currencies
+- Convert large numbers carefully and preserve the original currency
+
+Do not write like a press release. Do not write like a generic AI news aggregator. Write like a sharp operator is briefing another sharp operator.
+
+
+9. SEND, RETRY AND FAILURE BEHAVIOUR
+-----------------------------------
+Before delivery, require a fully rendered issue, verified absolute source links, correct funding labels, an IST issue date, no broken placeholders or secrets, and a working per-recipient unsubscribe link.
+
+Create or reuse the issue for this IST date. Deduplicate recent stories by canonical URL and title. Save HTML, plain text, selected sources, research window and concise run metadata in the private issues table. Never publish subscriber addresses in an archive or run summary.
+
+Use a unique issue_id/subscriber_id delivery row. Claim a queued row atomically in the trusted backend. Immediately recheck that the subscriber is active. A sent row is terminal for that issue. Skip unsubscribed or suppressed addresses.
+
+Use only the verified Gmail sender. Record a provider message ID and accepted timestamp only when sending returns confirmed success. Provider acceptance is not proof of inbox delivery. Update successful-run metadata only after the appropriate stage completes; saving a draft is not a successful send.
+
+If a source fetch fails, retry once, then continue with other sources and record the gap. If a mail request has an unknown outcome (timeout or interrupted response), mark the delivery unknown and reconcile it with the provider before resending. Do not blindly retry and create duplicates. Definite transient failures may retry within a bounded attempt limit and the provider's limits. Do not attempt to evade provider limits.
+
+If delivery cannot proceed, save the complete HTML/plain-text issue as a database draft. If the explicitly authorised Gmail connection supports drafting, a Gmail draft is an optional fallback, still not a send. If database access is unavailable, save local output and report the blockage without mailing anyone.
+
+10. ACTIVATION AND FIRST-RUN CHECK
+----------------------------------
+Before creating the recurring subscriber automation, verify live read-only access to every required connector/service. Connect Supabase and production mail authentication first. Do not create a scheduled task that assumes those connections may work later. Check existing automations before creation to avoid duplicate daily jobs.
+
+Activation requires: applied database schema; private subscriber access; rate-limited signup; confirmation of email control; working unsubscribe; authenticated sender; server-side secrets; stored issue drafts; delivery uniqueness; bounded retries; and exact 11:00 AM IST scheduling.
+
+Run a controlled first issue only after the owner explicitly supplies the test recipient. Verify HTML, plain text, source URLs and funding labels. Exercise confirmation, unsubscribe, duplicate suppression and failed/unknown send handling. Do not use a real subscriber list as the initial test.
+
+11. OUTPUT CONTRACT
+--------------------
+Produce one issue as HTML and plain text, source records and minimal run metadata. Delivery must have per-subscriber confirmed outcomes. Summaries report counts only: selected stories, eligible subscribers, accepted sends, skipped recipients, failures and unknown outcomes.
+
+Never claim an email was sent, a person subscribed, a database was connected, or an automation was scheduled unless the relevant operation returned success. Never treat request mail or a local form interaction as a subscriber database record.

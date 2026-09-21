@@ -1,0 +1,19 @@
+{
+  "name": "aditya-portfolio",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Aditya Shrivastav portfolio with AI News Scout newsletter signup.",
+  "scripts": {
+    "start": "node server/index.mjs",
+    "dev": "node --env-file=.env --watch server/index.mjs",
+    "preview": "node scripts/preview.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  }
+}

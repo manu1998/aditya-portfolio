@@ -1,0 +1,112 @@
+AI NEWS SCOUT
+21 Sep 2026 · IST
+A filtered daily brief for building with AI.
+
+Quiet day. We found no major new announcement we could verify in the 36 hours to 03:24 IST today. This edition uses three clearly dated updates from 15–18 September, plus two practical ideas to validate. These are earlier signals, not overnight launches.
+
+THE SHORT VERSION
+• 17 September: Google changed its Antigravity Agent preview and local tool interface. Teams using the May preview should review their adapters before the listed 5 October retirement date.
+
+• 15 September: Google made two Gemini 3.8 Live voice models generally available. A small, scripted comparison can show whether either fits a real customer conversation.
+
+• 18 September: Anthropic announced embedded evaluation with Accenture. This is a voluntary safety initiative; useful evidence will depend on access, reporting and how the arrangement works.
+
+AI PRODUCTS, MODELS AND LAUNCHES
+OLDER CONTEXT · OFFICIAL · 17 SEP 2026
+1. An agent upgrade that needs an integration check
+
+What happened. Google released antigravity-preview-09-2026. Its local tools change argument names and file-edit behaviour. The May preview is listed for shutdown on 5 October; Google describes table dates as earliest possible retirement dates.
+
+Why it matters. A model-name change alone may be insufficient for integrations that parse tool calls.
+
+Try next. Replay file-read and file-edit tasks in staging before switching. Keep a rollback path.
+
+Google release notes · 17 Sep 2026
+https://ai.google.dev/gemini-api/docs/changelog
+Google deprecation schedule · updated 17 Sep 2026
+https://ai.google.dev/gemini-api/docs/deprecations
+
+OLDER CONTEXT · OFFICIAL · 15 SEP 2026
+2. Two voice models, one useful comparison
+
+What happened. Google released Gemini 3.8 Live and Live Extended Thinking as generally available audio-to-audio models. It positions the first for low-latency dialogue and the second for more background reasoning.
+
+Why it matters. Availability creates a testable option, not proof of better customer outcomes.
+
+Try next. Compare interruption handling and correct next steps on the same ten calls before changing a voice workflow.
+
+Google release notes · 15 Sep 2026
+https://ai.google.dev/gemini-api/docs/changelog
+
+INDIAN AI STARTUPS TO WATCH
+No verified fresh company milestone made this issue. A model-routing report surfaced, but its original publication details could not be checked reliably, so it is excluded. This is a limit of the evidence reviewed, not a claim that nothing happened.
+
+VERIFIED INDIA AI FUNDING ALERTS
+Confirmed funding. No verified update found in the reviewed window.
+
+Reported talks / possible funding. No sufficiently verified update selected.
+
+VC fund closure. No verified update selected. Fund closures and government-approved project investments are not startup funding rounds.
+
+AI GOVERNANCE AND POLICY
+OLDER CONTEXT · COMPANY SAFETY INITIATIVE · 18 SEP 2026
+Outside evaluation moves closer to the lab
+
+What happened. Anthropic announced an embedded evaluation partnership with Accenture, led by Faculty. It says evaluators will work inside AI companies with access comparable to employees. Anthropic will directly fund Accenture’s work; operating details and reporting standards are still being developed.
+
+Why it matters. For businesses buying AI, this is a potential source of assurance to watch, not a completed independent audit or a new legal requirement.
+
+Builder recommendation. Ask suppliers what evidence they will publish, how incidents will be reported and what evaluation does not cover. Keep your own tests for mistaken actions and escalation failures.
+
+Policy watch. No verified new government or regulator announcement was selected from the reviewed window.
+
+Anthropic: Partnering with Accenture on embedded evaluation · 18 Sep 2026
+https://www.anthropic.com/news/accenture-embedded-evaluation
+
+AI BUSINESS OPPORTUNITIES READERS COULD VALIDATE
+Editorial hypotheses based on the updates above. Demand and willingness to pay still need testing.
+
+A missed-call callback assistant for property teams
+
+Customer and pain. A Delhi NCR or Nagpur property operator whose team loses enquiries when staff cannot answer.
+
+Narrow product. A consent-based callback that captures area, budget and move-in date, then hands a structured summary to a person. Start with one property and one language.
+
+Why now. The voice releases offer a concrete candidate for a small comparison; they do not establish local-language reliability.
+
+Within seven days. Interview three operators, count missed enquiries with their permission, and test ten synthetic calls. Measure correct qualification, handoff and time saved before proposing a paid pilot.
+
+Market fit. India first; a Dubai version would need separate language and workflow validation.
+
+
+
+A fixed-scope agent upgrade check for small agencies
+
+Customer and pain. An Indian or Gulf agency maintaining customer automations that may break when a preview API changes.
+
+Narrow product. A dependency inventory, ten replayable workflow tests and a migration report for one integration.
+
+Why now. The Antigravity interface change supplies a specific trigger for teams that actually use it.
+
+Within seven days. Ask five agencies whether they use the affected preview. Offer one paid staging audit; test file edits, failure recovery and approval boundaries.
+
+Market fit. India and Gulf service businesses with existing tool-using agents. Stop if the dependency is absent.
+
+
+
+ONE THING TO DO TODAY
+20-minute action. Write ten fictional property-enquiry scenarios: five straightforward, three incomplete and two requiring human help. Specify the correct next step for each. Use that sheet to judge any voice demo; a fluent answer only passes if the next step is right.
+
+SOURCES
+Dates are the original dates displayed by the sources. They do not provide publication times; the items above are labelled as older context.
+
+Gemini API release notes · Google · entries 15 and 17 Sep 2026
+https://ai.google.dev/gemini-api/docs/changelog
+
+Gemini deprecations · Google · updated 17 Sep 2026
+https://ai.google.dev/gemini-api/docs/deprecations
+
+Partnering with Accenture on embedded evaluation · Anthropic · 18 Sep 2026
+https://www.anthropic.com/news/accenture-embedded-evaluation
+
+Prepared newsletter draft. Subscriber delivery is not active.
