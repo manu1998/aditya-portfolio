@@ -1,4 +1,5 @@
 {
+  "last_successful_run_at": "2026-09-21T03:33:42+05:30",
   "last_successful_run_ist": "2026-09-21T03:33:42+05:30",
   "issue_date_ist": "2026-09-21",
   "urls_used_recently": [
@@ -6,8 +7,19 @@
     "https://ai.google.dev/gemini-api/docs/deprecations",
     "https://www.anthropic.com/news/accenture-embedded-evaluation"
   ],
-  "candidate_count": 5,
+  "candidate_count": 111,
   "selected_count": 3,
   "send_status": "unsent_gmail_draft_no_recipients",
-  "error_summary": null
+  "delivery_status": "not sent",
+  "error_summary": null,
+  "last_dry_run_at": "2026-09-21T22:23:50.918Z",
+  "last_dry_run_issue": "2026-09-22",
+  "coverage_gaps": [
+    "Reuters Technology: fetch failed",
+    "Microsoft AI: NO_NEW_ITEMS",
+    "Anthropic: HTTP 404",
+    "Google AI Blog: NO_NEW_ITEMS",
+    "Google DeepMind: NO_NEW_ITEMS"
+  ],
+  "idempotency_key": "ai-news-scout-2026-09-22"
 }

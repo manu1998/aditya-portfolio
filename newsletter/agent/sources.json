@@ -1,0 +1,56 @@
+{
+  "timeoutMs": 8000,
+  "capPerFeed": 12,
+  "groups": [
+    {
+      "id": "official",
+      "label": "Official AI company sources",
+      "feeds": [
+        { "name": "OpenAI", "url": "https://openai.com/news/rss.xml" },
+        { "name": "Anthropic", "url": "https://www.anthropic.com/news/rss" },
+        { "name": "Google AI Blog", "url": "https://blog.google/technology/ai/rss/" },
+        { "name": "Google DeepMind", "url": "https://deepmind.google/blog/rss.xml" },
+        { "name": "Microsoft AI", "url": "https://blogs.microsoft.com/feed/" },
+        { "name": "Meta Engineering", "url": "https://engineering.fb.com/feed/" },
+        { "name": "Hugging Face", "url": "https://huggingface.co/blog/feed.xml" },
+        { "name": "NVIDIA Blog", "url": "https://blogs.nvidia.com/feed/" }
+      ]
+    },
+    {
+      "id": "research",
+      "label": "Product, developer, and research signals",
+      "feeds": [
+        { "name": "arXiv cs.AI", "url": "https://rss.arxiv.org/rss/cs.AI" },
+        { "name": "arXiv cs.CL", "url": "https://rss.arxiv.org/rss/cs.CL" },
+        { "name": "Hacker News", "url": "https://hnrss.org/newest?q=AI+OR+LLM+OR+GPT+OR+Claude" }
+      ]
+    },
+    {
+      "id": "press",
+      "label": "Reputable reporting",
+      "feeds": [
+        { "name": "Reuters Technology", "url": "https://feeds.reuters.com/reuters/technologyNews" },
+        { "name": "The Verge AI", "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml" },
+        { "name": "TechCrunch AI", "url": "https://techcrunch.com/category/artificial-intelligence/feed/" },
+        { "name": "MIT Technology Review", "url": "https://www.technologyreview.com/feed/" }
+      ]
+    },
+    {
+      "id": "india",
+      "label": "India AI and startups",
+      "feeds": [
+        { "name": "Google News India AI", "url": "https://news.google.com/rss/search?q=India+artificial+intelligence+startup&hl=en-IN&gl=IN&ceid=IN:en" },
+        { "name": "Google News India AI funding", "url": "https://news.google.com/rss/search?q=India+AI+funding+OR+Sarvam+OR+Krutrim+OR+%22Yellow.ai%22&hl=en-IN&gl=IN&ceid=IN:en" },
+        { "name": "Inc42", "url": "https://inc42.com/feed/" },
+        { "name": "YourStory", "url": "https://yourstory.com/feed" }
+      ]
+    },
+    {
+      "id": "governance",
+      "label": "Governance, safety, and policy",
+      "feeds": [
+        { "name": "Google News AI policy", "url": "https://news.google.com/rss/search?q=AI+regulation+OR+%22EU+AI+Act%22+OR+NIST+OR+MeitY+OR+DPDP&hl=en&gl=US&ceid=US:en" }
+      ]
+    }
+  ]
+}

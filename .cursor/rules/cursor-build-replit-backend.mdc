@@ -1,0 +1,30 @@
+---
+description: Cursor builds the product. Replit is backend and database only. Never start Replit Agent from Cursor.
+alwaysApply: true
+---
+
+# Cursor builds. Replit is backend only.
+
+All product work for this portfolio happens in **Cursor**. Replit is **only** Postgres, secrets, and HTTP APIs (for example `POST /api/subscribe`, `GET /api/unsubscribe`, `POST /api/internal/issue`).
+
+## Never start Replit Agent from Cursor
+
+Do not call Replit tools that wake Agent, including `update_app_using_prompt` and create/update app from a prompt. Those start Replit Agent automatically, rewrite the site, and burn Core credits. Frontend deploys are a human file copy and publish in the Replit editor, not an Agent job from this chat.
+
+## Do
+
+- Build and edit UI, HTML, CSS, JS, copy, and layout in this Cursor repo (`dist/` is the frontend).
+- Deploy by copying Cursor-built files onto Replit and publishing. Do not redesign on Replit.
+- Keep the existing public URL. Do not create a new Repl for the website.
+- Keep newsletter signup, unsubscribe, and Resend delivery on the Replit API and database. Research the daily brief in GitHub Actions (`newsletter/agent/`), then POST the finished issue to Replit.
+
+## Do not
+
+- Do not use Replit Agent to create, rewrite, restyle, or "fix" the frontend.
+- Do not convert the Cursor static site into a Replit React/Vite app.
+- Do not run a 24/7 Autoscale scraper for AI news. Daily briefs are a scheduled job, not the public site.
+- Do not spend Replit credits on Agent rebuilds when Cursor already has the page.
+
+## Why
+
+Replit Agent full builds emptied Core credits. Hosting a quiet site is cheap. Agent is not.

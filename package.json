@@ -7,7 +7,9 @@
   "scripts": {
     "start": "node server/index.mjs",
     "dev": "node --env-file=.env --watch server/index.mjs",
-    "preview": "node scripts/preview.mjs"
+    "preview": "node scripts/preview.mjs",
+    "scout": "node newsletter/agent/run.mjs",
+    "scout:dry": "node newsletter/agent/run.mjs --dry-run"
   },
   "engines": {
     "node": ">=20"
